@@ -1,0 +1,32 @@
+##### Copyright 2023 Elena Dulgheru (elenadulgheru03@gmail.com)
+# README check
+    The given tasks were solved in both programming languages C and Python and
+used the exact same ideas, which is exactly why only the code in C has 
+commentaries.
+    The problem is split into 2 tasks so they were solved separately.
+    The first task consists of recognizing the malicious URLS. The program has
+4 functions: check_database(), check_malware(), check_digits() and check_www().
+-check_database(char *s): it checks if the current line contains any of the 
+                          strings in the given database, it returns 1 if the 
+                          URL is malicious and 0 otherwise
+-check_malware(char *s): it checks if the current line is of executable type
+-check_digits(char *s): it checks if more than 10% of the characters in the 
+                        domain are check_digits
+-check_www(char *s): it checks if 'www' are written in a normal format
+    If any of the first 3 functions returns 1 it means that the current URL is
+malicious and the program prints 1. Otherwise it checks if the 'www' exists and
+is in a valid form. If the last function returns 1 it means the URL is still
+malicious and the program prints 1, and if it return 0 the program prints 0.
+
+    The second task consists of tracking the bad internet traffic and the
+program uses 2 functions to do that: valid_flow_time() and valid_flow_pkts().
+-valid_flow_time(char *s): it checks if the duration of traffic is higher than 
+                           1 second, returns 1 if the duration is valid and
+                           0 otherwise
+-valid_flow_pkts(char *s): it checks if the current line ends with '.0.0', 
+                           which is a valid format, returns 1 if it's valid 
+                           and 0 otherwise
+    If the first function returns 1 it means that the traffic takes less than 
+a second so it's valid and the program prints 0. If it return 0 but the data 
+ends with '.0.0' it's still valid so the program prints also 0. If both of the
+functions return 0 then the traffic is suspect and the program prints 1.
